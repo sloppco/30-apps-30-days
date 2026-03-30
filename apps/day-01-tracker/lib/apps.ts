@@ -1,0 +1,47 @@
+import { App } from "./types";
+
+export const CHALLENGE_START = "2026-03-30";
+
+export const apps: App[] = [
+  {
+    day: 1,
+    name: "App tracker",
+    description:
+      "A dashboard to track and publicly showcase this 30-day challenge.",
+    stack: "Next.js, Tailwind",
+    liveUrl: "",
+    githubPath: "apps/day-01-tracker",
+    timeToShip: "",
+    learned: "",
+    status: "shipped",
+  },
+  { day: 2, status: "upcoming" },
+  { day: 3, status: "upcoming" },
+  { day: 4, status: "upcoming" },
+  { day: 5, status: "upcoming" },
+  { day: 6, status: "upcoming" },
+  { day: 7, status: "upcoming" },
+  { day: 8, status: "upcoming" },
+  { day: 9, status: "upcoming" },
+  { day: 10, status: "upcoming" },
+  { day: 11, status: "upcoming" },
+  { day: 12, status: "upcoming" },
+  { day: 13, status: "upcoming" },
+  { day: 14, status: "upcoming" },
+  { day: 15, status: "upcoming" },
+  { day: 16, status: "upcoming" },
+  { day: 17, status: "upcoming" },
+  { day: 18, status: "upcoming" },
+  { day: 19, status: "upcoming" },
+  { day: 20, status: "upcoming" },
+  { day: 21, status: "upcoming" },
+  { day: 22, status: "upcoming" },
+  { day: 23, status: "upcoming" },
+  { day: 24, status: "upcoming" },
+  { day: 25, status: "upcoming" },
+  { day: 26, status: "upcoming" },
+  { day: 27, status: "upcoming" },
+  { day: 28, status: "upcoming" },
+  { day: 29, status: "upcoming" },
+  { day: 30, status: "upcoming" },
+];
