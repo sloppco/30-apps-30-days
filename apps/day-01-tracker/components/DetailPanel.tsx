@@ -78,12 +78,51 @@ export default function DetailPanel({ app }: DetailPanelProps) {
           </div>
         </div>
 
+        {/* Build summary */}
+        {app.buildSummary && (
+          <div className="mt-4">
+            <h3 className="text-sm font-semibold text-gray-700">Build summary</h3>
+            <p className="mt-2 text-sm text-gray-600">{app.buildSummary}</p>
+          </div>
+        )}
+
+        {/* Improvements */}
+        {app.improvements && app.improvements.length > 0 && (
+          <div className="mt-4">
+            <h3 className="text-sm font-semibold text-gray-700">
+              Improvements after first pass
+            </h3>
+            <ul className="mt-2 space-y-1">
+              {app.improvements.map((item, i) => (
+                <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+                  <span className="mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-gray-400" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* Bugs encountered */}
+        {app.bugs && app.bugs.length > 0 && (
+          <div className="mt-4">
+            <h3 className="text-sm font-semibold text-gray-700">Bugs encountered</h3>
+            <ul className="mt-2 space-y-1">
+              {app.bugs.map((item, i) => (
+                <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+                  <span className="mt-1.5 shrink-0 w-1.5 h-1.5 rounded-full bg-red-300" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {/* Reflection — falls back to legacy `learned` field for day 01 */}
         <div className="mt-4">
-          <h3 className="text-sm font-semibold text-gray-700">
-            What I learned
-          </h3>
+          <h3 className="text-sm font-semibold text-gray-700">Reflection</h3>
           <p className="mt-2 text-sm text-gray-600">
-            {displayValue(app.learned)}
+            {displayValue(app.reflection ?? app.learned)}
           </p>
         </div>
       </section>
