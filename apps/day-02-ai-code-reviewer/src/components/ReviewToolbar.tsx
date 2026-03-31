@@ -7,6 +7,11 @@ type ReviewToolbarProps = {
   detectedLanguage: string | null;
   onLanguageChange: (lang: string) => void;
   onFocusChange: (focus: string) => void;
+  /**
+   * When true the selects are rendered as non-interactive. Used in demo mode
+   * so that user input cannot interfere with the running simulation.
+   */
+  readOnly?: boolean;
 };
 
 /**
@@ -23,6 +28,7 @@ export default function ReviewToolbar({
   detectedLanguage,
   onLanguageChange,
   onFocusChange,
+  readOnly = false,
 }: ReviewToolbarProps) {
   return (
     <div className="flex gap-3 p-3 border-b border-slate-200 bg-slate-50">
@@ -34,7 +40,9 @@ export default function ReviewToolbar({
         <select
           value={language}
           onChange={(e) => onLanguageChange(e.target.value)}
-          className="text-sm border border-slate-200 rounded-md px-2 py-1.5 bg-white text-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent"
+          disabled={readOnly}
+          data-demo="language-select"
+          className="text-sm border border-slate-200 rounded-md px-2 py-1.5 bg-white text-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent disabled:opacity-100 disabled:cursor-default"
         >
           {LANGUAGES.map((lang) => (
             <option key={lang} value={lang}>
@@ -58,7 +66,9 @@ export default function ReviewToolbar({
         <select
           value={focus}
           onChange={(e) => onFocusChange(e.target.value)}
-          className="text-sm border border-slate-200 rounded-md px-2 py-1.5 bg-white text-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent"
+          disabled={readOnly}
+          data-demo="focus-select"
+          className="text-sm border border-slate-200 rounded-md px-2 py-1.5 bg-white text-slate-700 focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent disabled:opacity-100 disabled:cursor-default"
         >
           {FOCUS_OPTIONS.map((opt) => (
             <option key={opt} value={opt}>

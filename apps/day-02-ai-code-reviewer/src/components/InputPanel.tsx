@@ -7,6 +7,11 @@ type InputPanelProps = {
   isStreaming: boolean;
   /** The language inferred by the model when "Auto" is selected. */
   detectedLanguage: string | null;
+  /**
+   * When true all inputs and buttons are non-interactive. Used in demo mode
+   * so user input cannot interrupt the running simulation.
+   */
+  readOnly?: boolean;
   onCodeChange: (code: string) => void;
   onLanguageChange: (lang: string) => void;
   onFocusChange: (focus: string) => void;
@@ -30,6 +35,7 @@ export default function InputPanel({
   focus,
   isStreaming,
   detectedLanguage,
+  readOnly = false,
   onCodeChange,
   onLanguageChange,
   onFocusChange,
@@ -43,6 +49,7 @@ export default function InputPanel({
         language={language}
         focus={focus}
         detectedLanguage={detectedLanguage}
+        readOnly={readOnly}
         onLanguageChange={onLanguageChange}
         onFocusChange={onFocusChange}
       />
@@ -52,8 +59,10 @@ export default function InputPanel({
         <textarea
           value={code}
           onChange={(e) => onCodeChange(e.target.value)}
+          readOnly={readOnly}
+          data-demo="textarea"
           placeholder="Paste your code here..."
-          className="w-full h-full font-mono text-sm text-slate-800 bg-slate-50 border border-slate-200 rounded-md p-3 resize-y focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent placeholder-slate-400"
+          className="w-full h-full font-mono text-sm text-slate-800 bg-slate-50 border border-slate-200 rounded-md p-3 resize-y focus:outline-none focus:ring-2 focus:ring-slate-900 focus:border-transparent placeholder-slate-400 read-only:cursor-default read-only:select-none"
           style={{ minHeight: "280px" }}
         />
       </div>
@@ -77,6 +86,7 @@ export default function InputPanel({
           <button
             onClick={onSubmit}
             disabled={!code.trim()}
+            data-demo="submit-button"
             className="px-4 py-2 text-sm font-medium text-white bg-slate-900 rounded-md hover:bg-slate-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
           >
             Review code →
