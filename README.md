@@ -11,6 +11,8 @@ AI-assisted engineering actually feels like in practice.
 | Day | App                                  | What it does          | Stack   | Live  |
 | --- | ------------------------------------ | --------------------- | ------- | ----- |
 | 01  | [App Tracker](./apps/day-01-tracker) | 30-day challenge dashboard | Next.js 16, Tailwind | [↗](https://day01.slopp.co) |
+| 02  | [AI Code Reviewer](./apps/day-02-ai-code-reviewer) | Streaming code review with severity scoring | Next.js 16, Tailwind, Claude | [↗](https://day02.slopp.co) |
+| 03  | [Voice Journal](./apps/day-03-voice-journal) | Record voice, get transcript + AI structure | Next.js 16, Tailwind, Whisper, Claude | [↗](https://day03.slopp.co) |
 
 ## What I'm learning
 

@@ -42,7 +42,19 @@ export const apps: App[] = [
     reflection:
       "Extended the app's functionality well beyond the initial brief. Claude Code made mistakes but self-corrected quickly. Standout moment was adding the demo/simulation mode with a single prompt — rough around the edges but impressive for one shot.",
   },
-  { day: 3, status: "upcoming" },
+  {
+    day: 3,
+    status: "shipped",
+    name: "Voice Journal",
+    description:
+      "Record your voice, get a transcript via Whisper, and extract themes and action items with Claude.",
+    stack: "Next.js 16, Tailwind, OpenAI Whisper, Anthropic SDK",
+    liveUrl: "https://day03.slopp.co",
+    githubPath: "apps/day-03-voice-journal",
+    timeToShip: "",
+    reflection:
+      "Browser MediaRecorder APIs are messier than expected — MIME type negotiation, permission UX, and blob assembly all need explicit handling. Demo mode is essential when API keys are personal and the app is public.",
+  },
   { day: 4, status: "upcoming" },
   { day: 5, status: "upcoming" },
   { day: 6, status: "upcoming" },
