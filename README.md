@@ -14,6 +14,7 @@ AI-assisted engineering actually feels like in practice.
 | 02  | [AI Code Reviewer](./apps/day-02-ai-code-reviewer) | Streaming code review with severity scoring | Next.js 16, Tailwind, Claude | [↗](https://day02.slopp.co) |
 | 03  | [Voice Journal](./apps/day-03-voice-journal) | Record voice, get transcript + AI structure | Next.js 16, Tailwind, Whisper, Claude | [↗](https://day03.slopp.co) |
 | 04  | [Dinner Decider](./apps/day-04-dinner-decider) | AI meal suggestions based on mood, time, and what's in the fridge | Next.js 16, Tailwind, Claude | [↗](https://day04.slopp.co) |
+| 05  | [Decision Helper](./apps/day-05-decision-helper) | AI decision coaching with selectable styles and streamed breakdown | Next.js 16, Tailwind, Claude | [↗](https://day05.slopp.co) |
 
 ## What I'm learning
 
