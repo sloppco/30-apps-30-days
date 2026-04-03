@@ -3,3 +3,8 @@
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+
+@keyframes ping {
+  0% { transform: translate(-6px, -6px) scale(1); opacity: 0.3; }
+  100% { transform: translate(-6px, -6px) scale(2.2); opacity: 0; }
+}

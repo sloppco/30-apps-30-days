@@ -50,6 +50,7 @@ export function InputForm({ form, onSubmit, isLoading }: InputFormProps) {
           options={MOODS}
           selected={form.moods}
           onToggle={form.toggleMood}
+          demoId="mood"
         />
       </div>
 
@@ -59,6 +60,7 @@ export function InputForm({ form, onSubmit, isLoading }: InputFormProps) {
           options={CUISINES}
           selected={form.cuisines}
           onToggle={form.toggleCuisine}
+          demoId="cuisine"
         />
       </div>
 
@@ -68,6 +70,7 @@ export function InputForm({ form, onSubmit, isLoading }: InputFormProps) {
           options={TIME_OPTIONS}
           selected={form.time}
           onSelect={form.setTime}
+          demoId="time"
         />
       </div>
 
@@ -77,6 +80,7 @@ export function InputForm({ form, onSubmit, isLoading }: InputFormProps) {
           options={EFFORT_OPTIONS}
           selected={form.effort}
           onSelect={form.setEffort}
+          demoId="effort"
         />
       </div>
 

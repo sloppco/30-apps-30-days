@@ -8,6 +8,7 @@ export function FridgeInput({ value, onChange }: FridgeInputProps) {
     <textarea
       value={value}
       onChange={(e) => onChange(e.target.value)}
+      data-demo="fridge"
       placeholder="e.g. chicken, cherry tomatoes, pasta, leftover rice..."
       rows={3}
       style={{

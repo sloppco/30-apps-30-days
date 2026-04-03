@@ -2,12 +2,14 @@ interface OptionSelectorProps {
   options: string[];
   selected: string;
   onSelect: (value: string) => void;
+  demoId?: string;
 }
 
 export function OptionSelector({
   options,
   selected,
   onSelect,
+  demoId,
 }: OptionSelectorProps) {
   return (
     <div className="flex flex-wrap gap-2">
@@ -17,6 +19,7 @@ export function OptionSelector({
           <button
             key={option}
             onClick={() => onSelect(option)}
+            data-demo={demoId ? `${demoId}-${option}` : undefined}
             style={
               isSelected
                 ? {

@@ -9,6 +9,7 @@ export function SubmitButton({ onClick, isLoading, disabled }: SubmitButtonProps
     <button
       onClick={onClick}
       disabled={isLoading || disabled}
+      data-demo="submit-button"
       style={{
         width: "100%",
         background: isLoading || disabled ? "#7dbf96" : "#2D8B4E",

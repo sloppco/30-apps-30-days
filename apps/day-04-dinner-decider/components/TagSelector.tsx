@@ -2,9 +2,10 @@ interface TagSelectorProps {
   options: string[];
   selected: string[];
   onToggle: (value: string) => void;
+  demoId?: string;
 }
 
-export function TagSelector({ options, selected, onToggle }: TagSelectorProps) {
+export function TagSelector({ options, selected, onToggle, demoId }: TagSelectorProps) {
   return (
     <div className="flex flex-wrap gap-2">
       {options.map((option) => {
@@ -13,6 +14,7 @@ export function TagSelector({ options, selected, onToggle }: TagSelectorProps) {
           <button
             key={option}
             onClick={() => onToggle(option)}
+            data-demo={demoId ? `${demoId}-${option}` : undefined}
             style={
               isSelected
                 ? {

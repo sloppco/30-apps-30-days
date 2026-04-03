@@ -1,53 +1,20 @@
-"use client";
+import HomeClient from "@/app/HomeClient";
 
-import { HeroCard } from "@/components/HeroCard";
-import { InputForm } from "@/components/InputForm";
-import { LoadingView } from "@/components/LoadingView";
-import { ResultsView } from "@/components/ResultsView";
-import { useDinnerForm } from "@/hooks/useDinnerForm";
-import { useDinnerResults } from "@/hooks/useDinnerResults";
+interface PageProps {
+  searchParams: Promise<{ demo?: string }>;
+}
 
-export default function Home() {
-  const form = useDinnerForm();
-  const results = useDinnerResults();
+/**
+ * Server component shell for Dinner Decider.
+ *
+ * Rules:
+ *   - Production → always demo mode, real API is never called.
+ *   - Development → demo mode only when ?demo=true is present.
+ */
+export default async function Page({ searchParams }: PageProps) {
+  const params = await searchParams;
+  const isDemo =
+    process.env.NODE_ENV === "production" || params.demo === "true";
 
-  function handleSubmit() {
-    results.fetchMeals(form.formState);
-  }
-
-  function handleStartOver() {
-    results.reset();
-    form.reset();
-  }
-
-  return (
-    <main
-      style={{
-        maxWidth: 480,
-        margin: "0 auto",
-        padding: "2rem 1rem",
-        minHeight: "100vh",
-      }}
-    >
-      <HeroCard />
-
-      {results.isLoading && <LoadingView />}
-
-      {results.isSuccess && (
-        <ResultsView
-          meals={results.meals}
-          onRegenerate={results.regenerate}
-          onStartOver={handleStartOver}
-        />
-      )}
-
-      {!results.isLoading && !results.isSuccess && (
-        <InputForm
-          form={form}
-          onSubmit={handleSubmit}
-          isLoading={results.isLoading}
-        />
-      )}
-    </main>
-  );
+  return <HomeClient isDemo={isDemo} />;
 }
