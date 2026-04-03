@@ -55,7 +55,18 @@ export const apps: App[] = [
     reflection:
       "Browser MediaRecorder APIs are messier than expected — MIME type negotiation, permission UX, and blob assembly all need explicit handling. Demo mode is essential when API keys are personal and the app is public.",
   },
-  { day: 4, status: "upcoming" },
+  {
+    day: 4,
+    status: "shipped",
+    name: "Dinner Decider",
+    description:
+      "Pick your mood, cuisine vibe, time, and effort level and get 2–3 AI-generated dinner suggestions with a best-match highlight.",
+    stack: "Next.js 16, Tailwind, Anthropic SDK",
+    liveUrl: "https://day04.slopp.co",
+    githubPath: "apps/day-04-dinner-decider",
+    timeToShip: "",
+    reflection: "",
+  },
   { day: 5, status: "upcoming" },
   { day: 6, status: "upcoming" },
   { day: 7, status: "upcoming" },
