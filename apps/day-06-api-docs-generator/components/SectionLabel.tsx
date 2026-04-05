@@ -1,5 +1,7 @@
+import type { ReactNode } from 'react';
+
 interface SectionLabelProps {
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export default function SectionLabel({ children }: SectionLabelProps) {

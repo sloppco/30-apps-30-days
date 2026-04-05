@@ -1,3 +1,5 @@
+'use client';
+
 interface DocHeaderProps {
   markdown: string;
   hasCopied: boolean;

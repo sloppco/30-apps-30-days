@@ -1,9 +1,10 @@
+import type { ReactNode } from 'react';
 import MethodBadge from './MethodBadge';
 
 interface EndpointBlockProps {
   method: string;
   path: string;
-  children: React.ReactNode;
+  children: ReactNode;
 }
 
 export default function EndpointBlock({ method, path, children }: EndpointBlockProps) {

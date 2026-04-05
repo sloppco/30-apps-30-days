@@ -1,3 +1,5 @@
+'use client';
+
 import { FORMAT_OPTIONS } from '@/lib/constants';
 import type { Format } from '@/lib/types';
 
